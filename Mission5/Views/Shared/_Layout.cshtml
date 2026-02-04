@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<h1>The Pangolin Appreciation Club</h1>
+<h3>The only mammal with scales!</h3>
+<img src="~/img/Pangolin.jpeg" height="200" id="imgPangolin"/>
+
+<div>
+    @RenderBody()
+</div>
+
+<script src="lib/jquery/jquery-4.0.0.min.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

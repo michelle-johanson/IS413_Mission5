@@ -1,0 +1,18 @@
+@model Mission5.Views._ViewImports
+
+<h2>Join the "Save the Pangolin" Mailing List</h2>
+<form>
+    <label>From:</label>
+    <input id="txtFrom" asp-for />
+    <br />
+
+    <label>Subject:</label>
+    <input type="text" class="form-control" id="txtSubject" />
+    <br />
+
+    <label class="form-label">Message:</label>
+    <textarea rows="4" class="form-control" id="txtMessage"></textarea>
+    <br />
+
+    <input type="button" value="Sign Up" id="btnSubmit" class="btn btn-warning" />
+</form>
