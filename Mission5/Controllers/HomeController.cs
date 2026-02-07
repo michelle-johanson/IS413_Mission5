@@ -10,7 +10,7 @@ public class HomeController : Controller
         return View();
     }
     
-    public IActionResult MailForm()
+    public IActionResult Calculator()
     {
         return View();
     }

@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Include="wwwroot\index.html" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Folder Include="wwwroot\lib\bootstrap\dist\" />
     </ItemGroup>
 
