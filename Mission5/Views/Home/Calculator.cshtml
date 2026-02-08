@@ -1,18 +1,33 @@
-@model Mission5.Views._ViewImports
+@{
+    ViewData["Title"] = "Tutoring Calculator";
+}
 
-<h2>Join the "Save the Pangolin" Mailing List</h2>
-<form>
-    <label>From:</label>
-    <input id="txtFrom" />
-    <br />
-
-    <label>Subject:</label>
-    <input type="text" class="form-control" id="txtSubject" />
-    <br />
-
-    <label class="form-label">Message:</label>
-    <textarea rows="4" class="form-control" id="txtMessage"></textarea>
-    <br />
-
-    <input type="button" value="Sign Up" id="btnSubmit" class="btn btn-warning" />
-</form>
+<div class="calculator-container">
+    <h1>Art Tutoring Calculator</h1>
+    
+    <p class="text-center">Calculate how much it would cost for personalized art tutoring sessions!</p>
+    
+    <div class="calculator-form">
+        <div class="form-group">
+            <label for="hours" class="form-label">Number of Hours</label>
+            <input type="number" id="hours" class="form-control" placeholder="Enter hours (e.g., 5)" min="0" step="0.5">
+            <span id="hours-error" class="error-message">Please enter a positive number</span>
+        </div>
+        
+        <div class="form-group">
+            <label for="hourlyRate" class="form-label">Hourly Rate</label>
+            <input type="text" id="hourlyRate" class="form-control" value="$25.00" disabled>
+        </div>
+        
+        <button id="calculateBtn" class="btn-calculate">Calculate Total</button>
+        
+        <div id="resultBox" class="result-box" style="display: none;">
+            <p style="margin-bottom: 0.5rem; font-weight: 600;">Total Cost:</p>
+            <p class="result-amount" id="totalCost">$0.00</p>
+        </div>
+    </div>
+    
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-primary">← Back to Home</a>
+    </div>
+</div>

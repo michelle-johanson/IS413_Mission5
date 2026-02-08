@@ -127,7 +127,8 @@ img {
     height: auto;
     border-radius: 8px;
     box-shadow: var(--shadow);
-    margin: 1rem 0;
+    margin: 0;
+    display: block;
 }
 
 .image-gallery {
@@ -139,15 +140,35 @@ img {
 
 .image-wrapper {
     position: relative;
-    overflow: hidden;
     border-radius: 8px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--white);
+    padding: 0;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
 }
 
 .image-wrapper:hover {
     transform: translateY(-5px);
     box-shadow: var(--hover-shadow);
+}
+
+.image-caption {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    background-color: var(--white);
+    border-radius: 0 0 8px 8px;
 }
 
 /* ===== FOOTER STYLES ===== */
@@ -179,6 +200,37 @@ img {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== ART PAGE STYLES ===== */
+.art-page {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.intro-section {
+    margin-bottom: 2rem;
+}
+
+.art-description {
+    margin-top: 2rem;
+}
+
+.art-description h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.cta-section {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+.cta-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 /* ===== CALCULATOR STYLES ===== */
@@ -265,6 +317,14 @@ img {
 
 .error-message.show {
     display: block;
+}
+
+.error-input {
+    border-color: var(--accent-color) !important;
+}
+
+.error-input:focus {
+    border-color: var(--accent-color) !important;
 }
 
 /* ===== BUTTONS ===== */

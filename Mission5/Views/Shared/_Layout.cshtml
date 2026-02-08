@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - My Hobby Site</title>
+    <title>@ViewData["Title"] - Michelle Johanson</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="~/img/favicon.png" />
     
     <!-- CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
@@ -15,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <div>
-                <a class="nav-link d-inline-block" href="/">My Hobby</a>
+                <a class="nav-link d-inline-block" href="/">My Drawing</a>
                 <a class="nav-link d-inline-block" href="/Home/Calculator">Calculator</a>
             </div>
         </div>
@@ -34,7 +37,8 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-left">
-                <p class="mb-0">Built by Michelle Johanson</p>
+                <p class="mb-0">&copy; @DateTime.Now.Year Art & Drawing. All rights reserved.</p>
+                <p class="mb-0">Built with ❤️ by Michelle Johanson</p>
             </div>
             <div class="footer-right">
                 <p class="mb-0">IS 413 - Mission 5</p>
@@ -48,6 +52,5 @@
 <script src="~/lib/jquery/jquery-4.0.0.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js"></script>
-@* @await RenderSectionAsync("Scripts", required: false) *@
 </body>
 </html>
