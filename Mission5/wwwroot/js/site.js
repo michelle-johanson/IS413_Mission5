@@ -1,57 +1,26 @@
-// jQuery code for the tutoring calculator
 $(document).ready(function() {
-    // Set the hourly rate
-    const hourlyRate = 25.00;
+    $("#calculateBtn").click(function() {
+        // 1. Get the values
+        var hoursInput = $("#hours").val();
+        var rateInput = $("#hourlyRate").val();
 
-    // Handle calculate button click
-    $('#calculateBtn').click(function() {
-        calculateTotal();
-    });
+        // 2. Convert to numbers
+        var hours = parseFloat(hoursInput);
+        var rate = parseFloat(rateInput.replace("$", ""));
 
-    // Allow Enter key to trigger calculation
-    $('#hours').keypress(function(event) {
-        if (event.which === 13) { // Enter key
-            calculateTotal();
-        }
-    });
-
-    // Clear error message when user starts typing
-    $('#hours').on('input', function() {
-        $('#hours-error').removeClass('show');
-        $(this).removeClass('error-input');
-    });
-
-    function calculateTotal() {
-        // Get the hours value
-        const hoursInput = $('#hours').val();
-        const hours = parseFloat(hoursInput);
-
-        // Validation
-        if (!hoursInput || hoursInput.trim() === '') {
-            showError();
-            return;
-        }
-
+        // Error handling: Default to 0 if invalid
         if (isNaN(hours) || hours <= 0) {
-            showError();
-            return;
+            hours = 0;
         }
 
-        // Calculate total
-        const total = hours * hourlyRate;
+        // 3. Calculate total
+        var total = hours * rate;
 
-        // Display result
-        $('#totalCost').text('$' + total.toFixed(2));
-        $('#resultBox').fadeIn(300);
+        // 4. Display the result
+        // .toFixed(2) forces 2 decimal places (e.g. 125.00)
+        $("#totalCost").text("$" + total.toFixed(2));
 
-        // Clear error state
-        $('#hours-error').removeClass('show');
-        $('#hours').removeClass('error-input');
-    }
-
-    function showError() {
-        $('#hours-error').addClass('show');
-        $('#hours').addClass('error-input');
-        $('#resultBox').fadeOut(300);
-    }
+        // 5. Reveal the box (it is hidden by default in your HTML)
+        $("#resultBox").show();
+    });
 });
